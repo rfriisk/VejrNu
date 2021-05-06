@@ -1,0 +1,27 @@
+<div id="divWeatherMain">
+    <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+        <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+        <i class="fas fa-3x fa-moon moon"></i>
+    </div>
+    <div *ngIf="!WeatherData.isClear" class="weatherWidgetRow cloudDiv">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+    </div>
+    <div *ngIf="WeatherData.rain" class="weatherWidgetRow cloudDiv">
+        <i class="fas fa-4x fa-cloud-showers-heavy cloud"></i>
+    </div>
+        
+
+    <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{WeatherData.temp_celcius}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Føles som: {{WeatherData.temp_feels_like}}°</div>
+    <div class="weatherWidgetRowCity">{{WeatherData.name}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;margin-top: 8px;">{{this.WeatherData.windspeed}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;text-transform: capitalize;margin-top: 8px;">
+        {{this.WeatherData.clouds}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;text-transform: capitalize;margin-top: 8px;">
+    <div class="weatherWidgetRow" style="font-size: 12px;">
+        <input #box (keyup.enter)="update(box.value)" (blur)="update(box.value)">
+    </div>
+</div>
