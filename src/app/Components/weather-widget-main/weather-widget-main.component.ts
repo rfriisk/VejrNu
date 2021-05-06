@@ -31,7 +31,7 @@ export class WeatherWidgetMainComponent implements OnInit {
   
   update(value: string) {
     this.value = value;
-    this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid={api-key}&lang=da`)
+    this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid={api-key}&lang=da`) /* Remeber your own api-key */
     .subscribe(data => {
       console.log(data);
       this.setWeatherData(data)
